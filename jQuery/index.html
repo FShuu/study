@@ -1,0 +1,52 @@
+<!DOCTYPE hrml>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+<title>jQueryの練習</title>
+  </head>
+<body>
+  <p>jQuryの練習</p>
+  <button>Add!</button>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script>
+    // $(document).ready(function()){
+    $(function(){
+        /* セレクタ：処理対象となるDOM要素を指定する記法
+        メソッド：処理
+        メソッドチェーン：繋げて書くこと
+        基本的に$(“”)
+        html要素 p h1 そのまま
+        id #main
+        class .item
+         >直下の子要素
+         それ以下の要素
+         ,複数の要素
+         +隣接する要素
+        <フィルタ
+        :eq()
+        :gt(), :lt()
+        :even,:odd>
+        <メソッドを使ったDOM要素の指定
+        parent(),children()
+        next(),prev()
+        siblings()
+        <属性セレクタ
+        = 指定
+        != それ以外>
+        */
+        // $('#box').click(function(){
+        //   alert("hey");
+        $('button').click(function() {
+          var p = $('<P>').text('vanish!').addClass('vanish');
+        $(this).before(p);
+        });
+        $('body').on('click','.vanish',function(){
+          $(this).remove();
+        });
+        });
+
+  </script>
+</body>
+
+</html>
